@@ -1,12 +1,13 @@
 package com.validation.constraintvalidation;
 
+import java.util.List;
+
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 import com.validation.NotEmptyList;
 
-import java.util.List;
-
+@SuppressWarnings("rawtypes")
 public class NotEmptyListValidator
         implements ConstraintValidator<NotEmptyList, List> {
 

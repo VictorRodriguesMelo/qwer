@@ -8,7 +8,6 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 public class projetoApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
-        SpringApplication.run(projetoApplication.class, args);
-        
+        SpringApplication.run(projetoApplication.class, args);        
     }
 }
