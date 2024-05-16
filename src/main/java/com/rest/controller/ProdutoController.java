@@ -1,7 +1,6 @@
 package com.rest.controller;
 
-import static org.springframework.http.HttpStatus.CREATED;
-import static org.springframework.http.HttpStatus.NO_CONTENT;
+import static org.springframework.http.HttpStatus.*;
 
 import java.util.List;
 
@@ -77,6 +76,7 @@ public class ProdutoController {
                         "Produto não encontrado."));
     }
 
+    @SuppressWarnings("unchecked")
     @GetMapping
     public List<Produto> find(Produto filtro ){
         ExampleMatcher matcher = ExampleMatcher
@@ -85,6 +85,7 @@ public class ProdutoController {
                 .withStringMatcher(
                         ExampleMatcher.StringMatcher.CONTAINING );
 
+        @SuppressWarnings("rawtypes")
         Example example = Example.of(filtro, matcher);
         return repository.findAll(example);
     }

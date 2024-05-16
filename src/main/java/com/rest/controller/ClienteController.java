@@ -101,6 +101,7 @@ public class ClienteController {
                                     .withStringMatcher(
                                             ExampleMatcher.StringMatcher.CONTAINING );
 
+        @SuppressWarnings("rawtypes")
         Example example = Example.of(filtro, matcher);
         return clientes.findAll(example);
     }
