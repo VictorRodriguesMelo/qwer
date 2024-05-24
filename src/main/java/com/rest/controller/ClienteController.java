@@ -34,7 +34,7 @@ public class ClienteController {
 
     private Clientes clientes;
 
-    public ClienteController( Clientes clientes ) {
+    public ClienteController(Clientes clientes) {
         this.clientes = clientes;
     }
 
@@ -84,7 +84,7 @@ public class ClienteController {
                         @RequestBody @Valid Cliente cliente ){
         clientes
                 .findById(id)
-                .map( clienteExistente -> {
+                .map(clienteExistente -> {
                     cliente.setId(clienteExistente.getId());
                     clientes.save(cliente);
                     return clienteExistente;
@@ -94,7 +94,7 @@ public class ClienteController {
 
     @SuppressWarnings("unchecked")
 	@GetMapping
-    public List<Cliente> find( Cliente filtro ){
+    public List<Cliente> find(Cliente filtro ){
         ExampleMatcher matcher = ExampleMatcher
                                     .matching()
                                     .withIgnoreCase()
